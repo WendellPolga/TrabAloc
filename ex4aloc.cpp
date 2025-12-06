@@ -2,11 +2,11 @@
 #include <cstring>
 using namespace std;
 
-char* alocaString(int tamanho) {
+char* alocarString(int tamanho) {
     return new char[tamanho + 1];
 }
 
-bool ehVogal(char c) {
+bool vogal(char c) {
     c = tolower(c);
     return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
@@ -17,14 +17,14 @@ int main() {
     cin >> tamanho;
     cin.ignore(); 
 
-    char* str = alocaString(tamanho);
+    char* str = alocarString(tamanho);
 
     cout << "Escreva: ";
     cin.getline(str, tamanho + 1);
 
     cout << "Sem as vogais: ";
     for (int i = 0; str[i] != '\0'; i++) {
-        if (!ehVogal(str[i])) {
+        if (!vogal(str[i])) {
             cout << str[i];
         }
     }
